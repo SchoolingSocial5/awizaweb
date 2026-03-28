@@ -64,7 +64,7 @@ export default function ForgottenPassword() {
           alt="Paragon Farms Logo"
         />
         <h2 className="text-2xl uppercase mb-[-6px] font-semibold text-[var(--custom-text-color)]">
-          Paragon Farms
+          Awiza Farm
         </h2>
       </div>
       <form onSubmit={handleSubmit} className="space-y-5">

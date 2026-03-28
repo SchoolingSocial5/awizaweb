@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <div>
       {/* ///////CONTACT SECTION//////////// */}
-      <PageHeader page="Contact" title="Contact Paragon Poultry Farms" />
+      <PageHeader page="Contact" title="Contact Awiza Poultry Farms" />
 
       {/* ////CONTACT SECTION2 //// */}
       <div className="flex py-[60px] bg-[var(--widgetBackground)] justify-center">

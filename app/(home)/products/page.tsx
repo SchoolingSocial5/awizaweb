@@ -9,7 +9,7 @@ function ProductPage() {
   const { user } = AuthStore()
   return (
     <>
-      <PageHeader page="Products" title="Paragon Poultry Products" />
+      <PageHeader page="Products" title="Awiza Poultry Products" />
 
       <div className="flex justify-center py-[90px] bg-[var(--backgroundColor)]">
         <div className="customContainer">

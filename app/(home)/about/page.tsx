@@ -11,7 +11,7 @@ export default function About() {
 
   return (
     <div>
-      <PageHeader page="About" title="About Paragon Farms" />
+      <PageHeader page="About" title="About Awiza Farm" />
 
       <Welcome />
 

@@ -18,7 +18,7 @@ const TermsAndConditions = () => {
   const sections = [
     {
       title: "1. Introduction",
-      content: "Welcome to Paragon Farms Ltd. These Terms and Conditions govern your use of our website and the purchase of our poultry products, including eggs, live birds, and day-old chicks."
+      content: "Welcome to Awiza Farms Ltd. These Terms and Conditions govern your use of our website and the purchase of our poultry products, including eggs, live birds, and day-old chicks."
     },
     {
       title: "2. Product Orders & Availability",
@@ -51,7 +51,7 @@ const TermsAndConditions = () => {
             Terms & Conditions
           </h1>
           <p className="text-teal-50 font-medium">
-            Last Updated: February 7, 2026 • Legal Framework for Paragon Farms Ltd
+            Last Updated: February 7, 2026 • Legal Framework for Awiza Farms Ltd
           </p>
         </div>
       </div>
@@ -60,7 +60,7 @@ const TermsAndConditions = () => {
       <main className="max-w-4xl mx-auto py-12 px-6">
         <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100">
           <p className="text-gray-600 mb-10 leading-relaxed">
-            Please read these terms carefully before using our services. By using Paragon Farms,
+            Please read these terms carefully before using our services. By using Awiza Farms,
             you agree to follow our guidelines regarding poultry safety, payments, and logistics.
           </p>
 
@@ -82,7 +82,7 @@ const TermsAndConditions = () => {
               Have questions about our legal terms?
             </p>
             <a
-              href="mailto:support@paragonfarms.com"
+              href="mailto:support@Awizafarms.com"
               className="text-[var(--customRedColor)] underline font-bold"
             >
               Contact our Legal Team
