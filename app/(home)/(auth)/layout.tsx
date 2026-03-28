@@ -10,7 +10,7 @@ export default function AuthLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="inset-0 z-50 flex relative items-center justify-center py-[100px]">
+    <div className="inset-0 z-30 flex relative items-center justify-center py-[100px]">
       <video
         autoPlay
         muted
