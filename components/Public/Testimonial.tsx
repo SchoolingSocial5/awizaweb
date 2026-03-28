@@ -58,7 +58,7 @@ function Testimonial() {
                         {item.fullName}
                       </div>
                       <div className="text-[15px] text-[var(--secondaryTextColor)] font-semibold">
-                        Founder & CEO
+                        Awiza Customer
                       </div>
                       <div className="flex text-[15px] font-bold">
                         <i className="bi bi-star text-[var(--customColor)] mr-1"></i>

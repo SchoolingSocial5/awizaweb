@@ -130,7 +130,7 @@ export default function SignUp() {
           alt="Paragon Farms Logo"
         />
         <h2 className="text-2xl uppercase mb-[-6px] font-semibold text-[var(--custom-text-color)]">
-          Paragon Farms
+          Awiza Farm
         </h2>
       </div>
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -220,9 +220,8 @@ export default function SignUp() {
             />
             <i
               onClick={togglePasswordVisibility}
-              className={`bi ${
-                showPassword ? 'bi-eye' : 'bi-eye-slash'
-              }  cursor-pointer text-lg absolute right-2 top-3`}
+              className={`bi ${showPassword ? 'bi-eye' : 'bi-eye-slash'
+                }  cursor-pointer text-lg absolute right-2 top-3`}
             ></i>
           </div>
           {error?.passwordMessage && (
@@ -246,9 +245,8 @@ export default function SignUp() {
             />
             <i
               onClick={togglePasswordVisibility}
-              className={`bi ${
-                showPassword ? 'bi-eye' : 'bi-eye-slash'
-              }  cursor-pointer text-lg absolute right-2 top-3`}
+              className={`bi ${showPassword ? 'bi-eye' : 'bi-eye-slash'
+                }  cursor-pointer text-lg absolute right-2 top-3`}
             ></i>
           </div>
           {error?.confirmPasswordMessage && (
