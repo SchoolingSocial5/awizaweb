@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import { NavStore } from '@/src/zustand/notification/Navigation'
 import PublicHeader from '@/components/Public/PublicHeader'
 import PublicNavbar from '@/components/Public/PublicNavbar'
-import PublicFooter from '@/components/Public/PublicFooter'
+// import PublicFooter from '@/components/Public/PublicFooter'
 import UserResponse from '@/components/Messages/UserResponse'
 import UserAlert from '@/components/Messages/UserAlert'
 import Link from 'next/link'
@@ -91,7 +91,7 @@ export default function RootLayout({
         </Link>
       )}
 
-      <PublicFooter />
+      {/* <PublicFooter /> */}
     </>
   )
 }
