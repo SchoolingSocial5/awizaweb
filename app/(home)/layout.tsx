@@ -14,7 +14,7 @@ import UserAlert from '@/components/Messages/UserAlert'
 import Link from 'next/link'
 import PageLoader from '@/components/Public/PageLoader'
 import ProductStore from '@/src/zustand/Product'
-import BlogStore from '@/src/zustand/Blog'
+// import BlogStore from '@/src/zustand/Blog'
 
 export default function RootLayout({
   children,
@@ -26,7 +26,7 @@ export default function RootLayout({
   const lastScrollY = useRef(0)
   const isOutOfView = useRef(false)
   const { cartProducts } = ProductStore()
-  const { blogs } = BlogStore()
+  // const { blogs } = BlogStore()
 
   // const [isMd, setIsMd] = useState(false)
   const pathname = usePathname()
@@ -76,7 +76,7 @@ export default function RootLayout({
       <UserAlert />
       <PublicHeader />
       <PublicNavbar />
-      <div className={`${blogs.length > 0 ? "h-auto" : "h-[100vh] overflow-hidden"} text-[var(--dark)] bg-white`}> {children}</div>
+      {/* <div className={`${blogs.length > 0 ? "h-auto" : "h-[100vh] overflow-hidden"} text-[var(--dark)] bg-white`}> {children}</div> */}
       {cartProducts.length > 0 && (
         <Link
           href={'/check-out'}
