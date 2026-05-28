@@ -20,7 +20,7 @@ export default function Hero() {
         spaceBetween={0}
         slidesPerView={1}
         speed={1500}
-        loop={true}
+        loop={banners.length > 1}
         className="w-full transition-transform duration-1000 ease-in-out"
       >
         {banners.map((item, index) => (

@@ -19,7 +19,7 @@ export default function ResetSuccessful() {
                     className="my-2"
                     width={0}
                     height={0}
-                    alt="Paragon Farms"
+                    alt="Awiza Farms"
                 />
                 <h2 className="text-xl text-center font-semibold mb-2">
                     Your password has been reset successfully

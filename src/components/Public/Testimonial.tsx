@@ -29,7 +29,7 @@ function Testimonial() {
             spaceBetween={10}
             slidesPerView={5} // Default for desktop
             slidesPerGroup={1}
-            loop={true}
+            loop={ratings.length > 5}
             speed={800} // Smooth transition speed (in ms)
             breakpoints={{
               0: { slidesPerView: 1 }, // 📱 Mobile (2 slides)

@@ -356,66 +356,20 @@ export default function Home() {
             }}
             className="w-full"
           >
-            <SwiperSlide>
-              <Link href="/" className="w-full">
-                <Image
-                  src="/images/partner1.png"
-                  sizes="100vw"
-                  className="h-auto w-[120px]"
-                  width={0}
-                  height={0}
-                  alt="real"
-                />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/" className="w-full">
-                <Image
-                  src="/images/partner2.png"
-                  sizes="100vw"
-                  className="h-auto w-[120px]"
-                  width={0}
-                  height={0}
-                  alt="real"
-                />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/" className="w-full">
-                <Image
-                  src="/images/partner3.png"
-                  sizes="100vw"
-                  className="h-auto w-[120px]"
-                  width={0}
-                  height={0}
-                  alt="real"
-                />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/" className="w-full">
-                <Image
-                  src="/images/partner4.png"
-                  sizes="100vw"
-                  className="h-auto w-[120px]"
-                  width={0}
-                  height={0}
-                  alt="real"
-                />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/" className="w-full">
-                <Image
-                  src="/images/partner5.png"
-                  sizes="100vw"
-                  className="h-auto w-[120px]"
-                  width={0}
-                  height={0}
-                  alt="real"
-                />
-              </Link>
-            </SwiperSlide>
+            {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((num, index) => (
+              <SwiperSlide key={index}>
+                <Link href="/" className="w-full">
+                  <Image
+                    src={`/images/partner${num}.png`}
+                    sizes="100vw"
+                    className="h-auto w-[120px]"
+                    width={0}
+                    height={0}
+                    alt="real"
+                  />
+                </Link>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>

@@ -133,9 +133,9 @@ export default function PublicFooter() {
             <div className="text-[var(--primaryCustomColor)] text-[15px] mx-2 font-bold">
               All Rights Reserved By
             </div>
-            <Link className="text-[var(--customColor)]" href={'/'}>
+            <a target="_blank" className="text-[var(--customColor)]" href={'https://kennytechstudios.com'}>
               Kenny Tech Studios
-            </Link>
+            </a>
           </div>
         </div>
       </div>

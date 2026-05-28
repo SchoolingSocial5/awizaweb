@@ -95,7 +95,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        <title>SBG Egg Farms Limited</title>
+        <title>Awiza Farms Limited</title>
 
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -103,16 +103,16 @@ export default function RootLayout({
 
         <meta
           name="description"
-          content="SBG Egg Farm is your trusted source for premium poultry products — from fresh eggs to healthy broilers. We’re dedicated to sustainable farming and quality you can taste."
+          content="Awiza Farm is your trusted source for premium poultry products — from fresh eggs to healthy broilers. We’re dedicated to sustainable farming and quality you can taste."
         />
 
         <meta
           property="og:title"
-          content="SBG Egg Farm — Fresh, Healthy Poultry You Can Trust"
+          content="Awiza Farm — Fresh, Healthy Poultry You Can Trust"
         />
         <meta
           property="og:description"
-          content="Experience excellence in poultry farming with SBG Egg Farm. We raise high-quality broilers and layers with care, ensuring freshness, nutrition, and sustainability."
+          content="Experience excellence in poultry farming with Awiza Farm. We raise high-quality broilers and layers with care, ensuring freshness, nutrition, and sustainability."
         />
         <meta
           property="og:image"
@@ -124,11 +124,11 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:title"
-          content="SBG Egg Farm — Quality Poultry Farming"
+          content="Awiza Farm — Quality Poultry Farming"
         />
         <meta
           property="twitter:description"
-          content="SBG Egg Farm produces premium poultry and eggs through sustainable farming practices. Fresh. Healthy. Reliable."
+          content="Awiza Farm produces premium poultry and eggs through sustainable farming practices. Fresh. Healthy. Reliable."
         />
         <meta
           property="twitter:image"

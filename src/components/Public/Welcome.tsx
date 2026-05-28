@@ -16,6 +16,7 @@ function Welcome() {
             width={0}
             height={0}
             alt="real"
+            priority
           />
           <div className="flex flex-col items-start">
             <div className="md:text-[40px] text-[25px] text-[var(--primaryTextColor)] font-bold mb-6">

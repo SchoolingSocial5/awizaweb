@@ -142,14 +142,20 @@ const CompanyStore = create<CompanyState>((set) => ({
   },
 
   getCompany: async (url, setMessage) => {
-    set({ loading: true })
-    const response = await apiRequest<FetchResponse>(url, {
-      method: 'GET',
-      setMessage,
-    })
-    const data = response.data
-    if (data) {
-      set({ loading: false, companyForm: data.company })
+    try {
+      set({ loading: true })
+      const response = await apiRequest<FetchResponse>(url, {
+        method: 'GET',
+        setMessage,
+      })
+      const data = response.data
+      if (data) {
+        set({ companyForm: data.company })
+      }
+    } catch (error) {
+      console.error('Error fetching company details:', error)
+    } finally {
+      set({ loading: false })
     }
   },
 }))

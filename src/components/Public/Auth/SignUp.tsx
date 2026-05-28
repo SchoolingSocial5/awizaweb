@@ -127,10 +127,10 @@ export default function SignUp() {
           className="my-auto mr-2"
           width={0}
           height={0}
-          alt="Paragon Farms Logo"
+          alt="Awiza Farms Logo"
         />
         <h2 className="text-2xl uppercase mb-[-6px] font-semibold text-[var(--custom-text-color)]">
-          SBG Egg Farm
+          Awiza Farm
         </h2>
       </div>
       <form onSubmit={handleSubmit} className="space-y-5">
