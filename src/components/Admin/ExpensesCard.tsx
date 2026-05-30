@@ -1,6 +1,6 @@
 "use client"
 import { formatRelatedDate } from "@/lib/helpers";
-import ExpenseStore from "@/zustand/Expenses";
+import ExpenseStore from "@/src/zustand/Expenses";
 import { Receipt } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";

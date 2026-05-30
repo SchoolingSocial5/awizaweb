@@ -1,6 +1,6 @@
 "use client"
 import { formatRelatedDate } from "@/lib/helpers";
-import TransactionStore from "@/zustand/Transaction";
+import TransactionStore from "@/src/zustand/Transaction";
 import { DollarSign } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";

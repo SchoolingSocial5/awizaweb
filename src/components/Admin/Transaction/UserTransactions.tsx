@@ -2,16 +2,16 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import StockingStore from '@/zustand/Stocking'
+import StockingStore from '@/src/zustand/Stocking'
 import {
   formatDateToDDMMYY,
   formatMoney,
   formatTimeTo12Hour,
 } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
-import TransactionStore from '@/zustand/Transaction'
+import TransactionStore from '@/src/zustand/Transaction'
 
 const UserTransactions: React.FC = () => {
   const [page_size] = useState(20)

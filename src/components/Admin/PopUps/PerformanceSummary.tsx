@@ -1,8 +1,8 @@
 'use client'
 import React, { useEffect } from 'react'
-import OperationStore from '@/zustand/Operation'
-import PenStore from '@/zustand/Pen'
-import { MessageStore } from '@/zustand/notification/Message'
+import OperationStore from '@/src/zustand/Operation'
+import PenStore from '@/src/zustand/Pen'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import { formatDateToDDMMYY } from '@/lib/helpers'
 
 interface PerformanceSummaryProps {

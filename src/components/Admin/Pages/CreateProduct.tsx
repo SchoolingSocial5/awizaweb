@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { appendForm } from '@/lib/helpers'
 import { validateInputs } from '@/lib/validation'
 import { useState, useEffect } from 'react'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
-import ProductStore from '@/zustand/Product'
+import ProductStore from '@/src/zustand/Product'
 import QuillEditor from '../QuillEditor'
 import PictureDisplay from '@/components/PictureDisplay'
-import PenStore from '@/zustand/Pen'
+import PenStore from '@/src/zustand/Pen'
 
 const CreateProduct: React.FC = () => {
   const searchParams = useSearchParams()

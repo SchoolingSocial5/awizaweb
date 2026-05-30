@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
-import { Transaction } from '@/zustand/Transaction'
-import CompanyStore from '@/zustand/app/Company'
+import { Transaction } from '@/src/zustand/Transaction'
+import CompanyStore from '@/src/zustand/app/Company'
 import { formatMoney, formatDateToDDMMYY, formatTimeTo12Hour } from '@/lib/helpers'
 
 import html2canvas from 'html2canvas'

@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import {
     formatDateToDDMMYY,
@@ -10,7 +10,7 @@ import {
 } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
 import OperationOverlay from '../PopUps/OperationOverlay'
-import OperationStore from '@/zustand/Operation'
+import OperationStore from '@/src/zustand/Operation'
 
 const OperationsTable: React.FC = () => {
     const [page_size] = useState(20)

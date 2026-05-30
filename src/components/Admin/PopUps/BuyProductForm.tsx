@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import { appendForm, formatMoney } from '@/lib/helpers'
 import { validateInputs } from '@/lib/validation'
-import { MessageStore } from '@/zustand/notification/Message'
-import ProductStore from '@/zustand/Product'
+import { MessageStore } from '@/src/zustand/notification/Message'
+import ProductStore from '@/src/zustand/Product'
 import { X } from 'lucide-react'
-import PenStore from '@/zustand/Pen'
-import { AuthStore } from '@/zustand/user/AuthStore'
+import PenStore from '@/src/zustand/Pen'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
 
 const BuyProductForm: React.FC = () => {
   const {

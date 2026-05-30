@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
-import { NavStore } from '@/zustand/notification/Navigation'
+import { NavStore } from '@/src/zustand/notification/Navigation'
 import { usePathname, useRouter } from 'next/navigation'
-import NotificationStore from '@/zustand/notification/Notification'
-import { MessageStore } from '@/zustand/notification/Message'
-import ExpenseStore from '@/zustand/Expenses'
+import NotificationStore from '@/src/zustand/notification/Notification'
+import { MessageStore } from '@/src/zustand/notification/Message'
+import ExpenseStore from '@/src/zustand/Expenses'
 import { Monitor } from 'lucide-react'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import useSocket from '@/useSocket'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import useSocket from '@/src/useSocket'
 
 export default function MainHeader() {
   const { toggleVNav, setHeaderHeight } = NavStore()

@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import TransactionStore from '@/zustand/Transaction'
+import TransactionStore from '@/src/zustand/Transaction'
 import { formatMoney, formatTimeTo12Hour } from '@/lib/helpers'
 
 export default function LatestTransactions() {

@@ -1,5 +1,5 @@
 // 'use client'
-// import TransactionStore from '@/zustand/Transaction'
+// import TransactionStore from '@/src/zustand/Transaction'
 // import {
 //   PieChart,
 //   Pie,
@@ -91,7 +91,7 @@
 //   )
 // }
 'use client'
-import TransactionStore from '@/zustand/Transaction'
+import TransactionStore from '@/src/zustand/Transaction'
 import {
   PieChart,
   Pie,
@@ -121,9 +121,9 @@ export default function PieGraph() {
     if (
       cx === undefined ||
       cy === undefined ||
+      midAngle === undefined ||
       innerRadius === undefined ||
       outerRadius === undefined ||
-      midAngle === undefined ||
       name === undefined ||
       value === undefined
     )
@@ -181,7 +181,7 @@ export default function PieGraph() {
               new Intl.NumberFormat('en-NG', {
                 style: 'currency',
                 currency: 'NGN',
-              }).format(value)
+              }).format(Number(value || 0))
             }
           />
           <Legend />

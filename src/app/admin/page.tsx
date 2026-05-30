@@ -5,7 +5,7 @@ import { MortalityCard } from "@/components/Admin/MortalityCard";
 import { ProductionCard } from "@/components/Admin/ProductionCard";
 import { ProductStocksCard } from "@/components/Admin/ProductStocksCard";
 import { SalesCard } from "@/components/Admin/SalesCard";
-import { AuthStore } from "@/zustand/user/AuthStore";
+import { AuthStore } from "@/src/zustand/user/AuthStore";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 

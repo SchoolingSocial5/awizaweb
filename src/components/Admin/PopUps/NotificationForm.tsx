@@ -1,10 +1,10 @@
 'use client'
 import { appendForm } from '@/lib/helpers'
 import { validateInputs } from '@/lib/validation'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import QuillEditor from '@/components/Admin/QuillEditor'
 import { useParams } from 'next/navigation'
-import NotificationTemplateStore from '@/zustand/notification/NotificationTemplate'
+import NotificationTemplateStore from '@/src/zustand/notification/NotificationTemplate'
 
 const NotificationForm: React.FC = () => {
     const url = '/notifications/templates'

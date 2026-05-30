@@ -1,11 +1,11 @@
 'use client'
 import { appendForm } from '@/lib/helpers'
 import { validateInputs } from '@/lib/validation'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import { useEffect, useState } from 'react'
 import PictureDisplay from '@/components/PictureDisplay'
-import { UserStore } from '@/zustand/user/User'
-import { AuthStore } from '@/zustand/user/AuthStore'
+import { UserStore } from '@/src/zustand/user/User'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
 
 const Profile: React.FC = () => {
   const url = '/users'

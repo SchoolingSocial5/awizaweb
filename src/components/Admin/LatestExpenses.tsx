@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { formatMoney, formatTimeTo12Hour } from '@/lib/helpers'
-import ExpenseStore from '@/zustand/Expenses'
+import ExpenseStore from '@/src/zustand/Expenses'
 
 export default function LatestExpenses() {
   const { latestExpenses } = ExpenseStore()

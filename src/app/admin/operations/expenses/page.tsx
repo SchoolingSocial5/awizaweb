@@ -10,9 +10,9 @@ import {
   formatTimeTo12Hour,
 } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
-import ExpenseStore from '@/zustand/Expenses'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import ExpenseStore from '@/src/zustand/Expenses'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 
 const Expenses: React.FC = () => {
   const [page_size] = useState(20)
@@ -306,7 +306,7 @@ const Expenses: React.FC = () => {
       </div>
 
       <div className="card_body sharp">
-        <LinkedPagination url="/admin/expenses" count={count} page_size={20} />
+        <LinkedPagination url="/admin/operations/expenses" count={count} page_size={20} />
       </div>
 
       {showForm && (

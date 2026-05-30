@@ -1,10 +1,10 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import OperationStore, { Operation } from '@/zustand/Operation'
-import PenStore, { Column } from '@/zustand/Pen'
-import ProductStore, { Product } from '@/zustand/Product'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import OperationStore, { Operation } from '@/src/zustand/Operation'
+import PenStore, { Column } from '@/src/zustand/Pen'
+import ProductStore, { Product } from '@/src/zustand/Product'
 
 const ProductionForm: React.FC = () => {
     const {

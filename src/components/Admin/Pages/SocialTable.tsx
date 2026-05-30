@@ -2,11 +2,11 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import { formatDateToDDMMYY } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
-import SocialStore, { Social } from '@/zustand/Social'
+import SocialStore, { Social } from '@/src/zustand/Social'
 import SocialForm from '@/components/Admin/PopUps/SocialForm'
 
 const SocialTable: React.FC = () => {

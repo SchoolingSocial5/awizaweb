@@ -2,13 +2,13 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import { formatDateToDDMMYY, formatTimeTo12Hour } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
 import MortalityForm from '@/components/Admin/PopUps/MortalityForm'
-import MortalityStore, { Mortality } from '@/zustand/Mortality'
-import PenStore from '@/zustand/Pen'
+import MortalityStore, { Mortality } from '@/src/zustand/Mortality'
+import PenStore from '@/src/zustand/Pen'
 
 const DailyMortality: React.FC = () => {
     const [page_size] = useState(20)

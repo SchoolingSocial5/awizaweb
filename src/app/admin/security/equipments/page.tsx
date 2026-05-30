@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import {
   appendForm,
@@ -10,10 +10,10 @@ import {
   formatTimeTo12Hour,
 } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
-import EquipmentStore from '@/zustand/Equipment'
-import { AuthStore } from '@/zustand/user/AuthStore'
+import EquipmentStore from '@/src/zustand/Equipment'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
 import { validateInputs } from '@/lib/validation'
-import { User, UserStore } from '@/zustand/user/User'
+import { User, UserStore } from '@/src/zustand/user/User'
 import _debounce from 'lodash/debounce'
 
 const Equipments: React.FC = () => {

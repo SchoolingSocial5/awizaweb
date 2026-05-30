@@ -1,12 +1,12 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import { validateInputs } from '@/lib/validation'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import ConsumptionStore, { Consumption } from '@/zustand/Consumption'
-import ProductStore, { Product } from '@/zustand/Product'
-import PenStore from '@/zustand/Pen'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import ConsumptionStore, { Consumption } from '@/src/zustand/Consumption'
+import ProductStore, { Product } from '@/src/zustand/Product'
+import PenStore from '@/src/zustand/Pen'
 import { calculateBirdAge } from '@/lib/helpers'
 
 const ConsumptionForm: React.FC = () => {

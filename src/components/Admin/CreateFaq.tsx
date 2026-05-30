@@ -2,10 +2,10 @@
 import { appendForm } from '@/lib/helpers'
 import { validateInputs } from '@/lib/validation'
 import { useState, useEffect } from 'react'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import { useParams } from 'next/navigation'
 import QuillEditor from './QuillEditor'
-import FaqStore from '@/zustand/faq'
+import FaqStore from '@/src/zustand/faq'
 
 const CreateFaq: React.FC = () => {
   const {

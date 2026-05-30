@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
 import { formatMoney } from '@/lib/helpers'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import ProductStore, { Product } from '@/zustand/Product'
-import { AuthStore } from '@/zustand/user/AuthStore'
+import ProductStore, { Product } from '@/src/zustand/Product'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
 import { Edit, Trash, ShoppingCart } from 'lucide-react'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import BuyProductForm from './PopUps/BuyProductForm'
 
 interface BuyingProductTableProps {

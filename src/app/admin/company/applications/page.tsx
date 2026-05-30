@@ -1,9 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import ApplicationStore from '@/zustand/Application'
+import ApplicationStore from '@/src/zustand/Application'
 import Image from 'next/image'
 
 const Applications: React.FC = () => {

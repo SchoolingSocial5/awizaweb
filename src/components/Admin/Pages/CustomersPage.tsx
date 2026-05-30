@@ -2,14 +2,14 @@
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import { UserStore, User } from '@/zustand/user/User'
+import { UserStore, User } from '@/src/zustand/user/User'
 import StaffSheet from '@/components/Admin/StaffSheet'
 import { formatMoney } from '@/lib/helpers'
 import Link from 'next/link'
 import _debounce from 'lodash/debounce'
-import EmailStore, { Email } from '@/zustand/notification/Email'
+import EmailStore, { Email } from '@/src/zustand/notification/Email'
 import StatDuration from '@/components/Admin/StatDuration'
 
 const CustomersPage: React.FC = () => {

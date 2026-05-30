@@ -2,9 +2,9 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import PositionStore, { Position } from '@/zustand/app/Position'
+import PositionStore, { Position } from '@/src/zustand/app/Position'
 import PositionSheet from '@/components/Admin/PopUps/PositionSheet'
 
 const Positions: React.FC = () => {

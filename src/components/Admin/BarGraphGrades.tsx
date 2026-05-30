@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from '@/context/ThemeProvider'
-import TransactionStore from '@/zustand/Transaction'
+import TransactionStore from '@/src/zustand/Transaction'
 import {
   BarChart,
   Bar,
@@ -38,7 +38,7 @@ export default function BarGraphSales() {
           />
           <YAxis stroke={theme === 'dark' ? '#ccc' : '#9ca3af'} />
           <Tooltip
-            formatter={(value: any) => value?.toLocaleString()}
+            formatter={(value: any) => Number(value || 0).toLocaleString()}
             labelFormatter={(label) => `Period: ${label}`}
           />
           <Legend />

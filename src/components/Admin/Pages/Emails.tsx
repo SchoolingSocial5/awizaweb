@@ -2,8 +2,8 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { MessageStore } from '@/zustand/notification/Message'
-import EmailStore, { Email } from '@/zustand/notification/Email'
+import { MessageStore } from '@/src/zustand/notification/Message'
+import EmailStore, { Email } from '@/src/zustand/notification/Email'
 import EmailForm from '../PopUps/EmailForm'
 
 const Emails: React.FC = () => {

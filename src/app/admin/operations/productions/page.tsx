@@ -3,9 +3,9 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import OperationStore, { Operation } from '@/zustand/Operation'
+import OperationStore, { Operation } from '@/src/zustand/Operation'
 import {
   formatDateToDDMMYY,
   formatTimeTo12Hour,
@@ -13,7 +13,7 @@ import {
 import StatDuration from '@/components/Admin/StatDuration'
 import ProductionForm from '@/components/Admin/PopUps/ProductionForm'
 import PerformanceSummary from '@/components/Admin/PopUps/PerformanceSummary'
-import PenStore from '@/zustand/Pen'
+import PenStore from '@/src/zustand/Pen'
 
 const DailyProductions: React.FC = () => {
   const [page_size] = useState(20)

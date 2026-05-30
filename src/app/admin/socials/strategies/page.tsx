@@ -2,11 +2,11 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import { formatDate } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
-import StrategyStore, { Strategy } from '@/zustand/Strategy'
+import StrategyStore, { Strategy } from '@/src/zustand/Strategy'
 import StrategyForm from '@/components/Admin/PopUps/StrategyForm'
 
 const Strategies: React.FC = () => {

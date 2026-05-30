@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { formatDateToDDMMYY, formatMoney, } from '@/lib/helpers'
-import SummaryStore from '@/zustand/Summary'
+import SummaryStore from '@/src/zustand/Summary'
 import FinanceDuration from '@/components/Admin/FinanceDuration'
 
 const PurchaseTransactions: React.FC = () => {

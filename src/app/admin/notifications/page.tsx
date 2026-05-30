@@ -2,9 +2,9 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { formatDateToDDMMYY, formatTimeTo12Hour } from '@/lib/helpers'
-import NotificationStore from '@/zustand/notification/Notification'
+import NotificationStore from '@/src/zustand/notification/Notification'
 import { useParams } from 'next/navigation'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 
 const Notifications: React.FC = () => {
   const { notifications, page_size, getNotifications, updateNotification } = NotificationStore()

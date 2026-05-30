@@ -1,6 +1,6 @@
 'use client'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
-import PenStore from '@/zustand/Pen'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
+import PenStore from '@/src/zustand/Pen'
 
 const ColumnForm: React.FC = () => {
     const {

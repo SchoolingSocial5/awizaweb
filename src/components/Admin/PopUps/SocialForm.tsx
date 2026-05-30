@@ -1,9 +1,9 @@
 'use client'
 import { appendForm } from '@/lib/helpers'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import { validateInputs } from '@/lib/validation'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import SocialStore from '@/zustand/Social'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import SocialStore from '@/src/zustand/Social'
 
 const SocialForm: React.FC = () => {
   const {

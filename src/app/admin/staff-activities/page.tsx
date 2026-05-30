@@ -2,11 +2,11 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import { formatDateToDDMMYY, formatTimeTo12Hour } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
-import ActivityStore from '@/zustand/Activity'
+import ActivityStore from '@/src/zustand/Activity'
 
 const Transactions: React.FC = () => {
   const [page_size] = useState(20)

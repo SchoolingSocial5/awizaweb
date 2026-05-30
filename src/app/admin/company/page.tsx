@@ -2,8 +2,8 @@
 import Link from 'next/link'
 import { appendForm } from '@/lib/helpers'
 import { validateInputs } from '@/lib/validation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
-import CompanyStore from '@/zustand/app/Company'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
+import CompanyStore from '@/src/zustand/app/Company'
 
 const CreateCompany: React.FC = () => {
   const url = '/company/'

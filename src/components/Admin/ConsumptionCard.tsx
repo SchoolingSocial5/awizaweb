@@ -1,6 +1,6 @@
 "use client"
 import { formatRelatedDate } from "@/lib/helpers";
-import ConsumptionStore from "@/zustand/Consumption";
+import ConsumptionStore from "@/src/zustand/Consumption";
 import { Wheat } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";

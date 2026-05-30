@@ -5,10 +5,10 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams, usePathname } from 'next/navigation'
 import { formatDate } from '@/lib/helpers'
 import _debounce from 'lodash/debounce'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import { Edit, Trash } from 'lucide-react'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import BlogStore from '@/zustand/Blog'
+import BlogStore from '@/src/zustand/Blog'
 
 const BlogTable: React.FC = () => {
     const {

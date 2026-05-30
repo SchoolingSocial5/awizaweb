@@ -1,6 +1,6 @@
 "use client"
 import { formatMoney } from "@/lib/helpers";
-import StockingStore from "@/zustand/Stocking";
+import StockingStore from "@/src/zustand/Stocking";
 import { Package } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";

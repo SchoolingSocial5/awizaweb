@@ -3,9 +3,9 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
 // import _debounce from 'lodash/debounce'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import FaqStore from '@/zustand/faq'
+import FaqStore from '@/src/zustand/faq'
 import CreateFaq from '@/components/Admin/CreateFaq'
 
 const Faqs: React.FC = () => {

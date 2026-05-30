@@ -1,9 +1,9 @@
 'use client'
 import { appendForm } from '@/lib/helpers'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import { validateInputs } from '@/lib/validation'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import MarketingStore from '@/zustand/Marketing'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import MarketingStore from '@/src/zustand/Marketing'
 
 const MarketingForm: React.FC = () => {
   const {

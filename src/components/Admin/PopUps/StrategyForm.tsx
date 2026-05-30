@@ -1,9 +1,9 @@
 'use client'
 import { appendForm } from '@/lib/helpers'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import { validateInputs } from '@/lib/validation'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import StrategyStore from '@/zustand/Strategy'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import StrategyStore from '@/src/zustand/Strategy'
 import { useState } from 'react'
 
 const StrategyForm: React.FC = () => {

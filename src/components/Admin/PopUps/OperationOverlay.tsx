@@ -2,10 +2,10 @@
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { appendForm } from '@/lib/helpers'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import { validateInputs } from '@/lib/validation'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import OperationStore from '@/zustand/Operation'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import OperationStore from '@/src/zustand/Operation'
 
 const OperationOverlay: React.FC = () => {
   const {

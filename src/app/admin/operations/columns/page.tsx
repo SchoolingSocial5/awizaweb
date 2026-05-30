@@ -2,9 +2,9 @@
 import { useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import PenStore, { Pen } from '@/zustand/Pen'
+import PenStore, { Pen } from '@/src/zustand/Pen'
 import PenForm from '@/components/Admin/PopUps/PenForm'
 import { formatDateToDDMMYY } from '@/lib/helpers'
 

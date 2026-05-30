@@ -1,8 +1,8 @@
 'use client'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import { useEffect } from 'react'
 import PictureDisplay from '@/components/PictureDisplay'
-import { UserStore } from '@/zustand/user/User'
+import { UserStore } from '@/src/zustand/user/User'
 import { useParams } from 'next/navigation'
 import UserTransactions from '@/components/Admin/Transaction/UserTransactions'
 

@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import {
   formatDateToDDMMYY,
@@ -13,10 +13,10 @@ import StatDuration from '@/components/Admin/StatDuration'
 import TransactionStore, {
   Transaction,
   TransactionEmpty,
-} from '@/zustand/Transaction'
+} from '@/src/zustand/Transaction'
 import PrintSlip from '@/components/Admin/PopUps/PrintSlip'
 import TransactionEditForm from '@/components/Admin/PopUps/TransactionEditForm'
-import { AuthStore } from '@/zustand/user/AuthStore'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
 
 const Transactions: React.FC = () => {
   const [page_size] = useState(20)
@@ -78,6 +78,8 @@ const Transactions: React.FC = () => {
       if (productFilter !== 'All') {
         if (productFilter === 'Fresh & Cracked Eggs') {
           filters += '&cartProducts.name[in]=Fresh Eggs,Cracked Fresh Eggs'
+        } else if (productFilter === 'Empty Bag') {
+          filters += '&cartProducts.name[regex]=Empty Bag&cartProducts.name[options]=i'
         } else {
           filters += `&cartProducts.name=${productFilter}`
         }
@@ -258,6 +260,7 @@ const Transactions: React.FC = () => {
             <option value="Fresh Eggs">Fresh Eggs</option>
             <option value="Cracked Fresh Eggs">Cracked Fresh Eggs</option>
             <option value="Fresh & Cracked Eggs">Fresh & Cracked Eggs</option>
+            <option value="Empty Bag">Empty Bag</option>
           </select>
         </div>
 

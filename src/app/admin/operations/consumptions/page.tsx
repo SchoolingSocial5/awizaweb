@@ -2,13 +2,13 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import { formatDateToDDMMYY, formatMoney } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
 import ConsumptionForm from '@/components/Admin/PopUps/ConsumptionForm'
-import ConsumptionStore, { Consumption } from '@/zustand/Consumption'
-import PenStore from '@/zustand/Pen'
+import ConsumptionStore, { Consumption } from '@/src/zustand/Consumption'
+import PenStore from '@/src/zustand/Pen'
 
 const Consumptions: React.FC = () => {
   const [page_size] = useState(20)

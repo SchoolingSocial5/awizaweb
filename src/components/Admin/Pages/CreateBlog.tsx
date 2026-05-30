@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { appendForm } from '@/lib/helpers'
 import { validateInputs } from '@/lib/validation'
 import { useState, useEffect } from 'react'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import { useParams, useRouter } from 'next/navigation'
 import PictureDisplay from '@/components/PictureDisplay'
-import BlogStore from '@/zustand/Blog'
+import BlogStore from '@/src/zustand/Blog'
 import QuillEditor from '../QuillEditor'
 
 const CreateBlog: React.FC = () => {

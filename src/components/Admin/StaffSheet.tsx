@@ -2,13 +2,13 @@
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { appendForm } from '@/lib/helpers'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import PictureDisplay from '@/components/PictureDisplay'
 import { validateInputs } from '@/lib/validation'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import { UserStore } from '@/zustand/user/User'
-import PositionStore, { Position } from '@/zustand/app/Position'
-import PenStore from '@/zustand/Pen'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import { UserStore } from '@/src/zustand/user/User'
+import PositionStore, { Position } from '@/src/zustand/app/Position'
+import PenStore from '@/src/zustand/Pen'
 
 const StaffSheet: React.FC = () => {
   const {

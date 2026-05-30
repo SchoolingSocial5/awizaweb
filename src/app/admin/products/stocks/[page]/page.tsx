@@ -3,9 +3,9 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { useParams, usePathname } from 'next/navigation'
 import { formatMoney } from '@/lib/helpers'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
-import StockingStore from '@/zustand/Stocking'
+import StockingStore from '@/src/zustand/Stocking'
 
 const Stocks: React.FC = () => {
   const { getStocks, reshuffleResults, loading, count, stocks } =

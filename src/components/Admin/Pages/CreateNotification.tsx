@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { appendForm } from '@/lib/helpers'
 import { validateInputs } from '@/lib/validation'
 import { useEffect } from 'react'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import QuillEditor from '@/components/Admin/QuillEditor'
 import { useParams, useRouter } from 'next/navigation'
-import NotificationTemplateStore from '@/zustand/notification/NotificationTemplate'
+import NotificationTemplateStore from '@/src/zustand/notification/NotificationTemplate'
 
 const CreateNotification: React.FC = () => {
   const url = '/notifications/templates'

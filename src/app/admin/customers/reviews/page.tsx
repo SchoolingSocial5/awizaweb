@@ -2,10 +2,10 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import { formatDateToDDMMYY, formatTimeTo12Hour } from '@/lib/helpers'
-import RatingStore, { Rating } from '@/zustand/Rating'
+import RatingStore, { Rating } from '@/src/zustand/Rating'
 import { Star } from 'lucide-react'
 
 const Ratings: React.FC = () => {

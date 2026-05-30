@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import {
   formatDateToDDMMYY,
@@ -10,7 +10,7 @@ import {
   formatTimeTo12Hour,
 } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
-import ServiceStore, { Service } from '@/zustand/Service'
+import ServiceStore, { Service } from '@/src/zustand/Service'
 import ServiceForm from '../PopUps/ServiceForm'
 
 const ServicesTable: React.FC = () => {

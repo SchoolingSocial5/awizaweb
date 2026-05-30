@@ -1,5 +1,5 @@
 'use client'
-import { UserStore } from '@/zustand/user/User'
+import { UserStore } from '@/src/zustand/user/User'
 
 const CustomerForm: React.FC = () => {
   const { userForm, loading, setForm, setShowUserForm } = UserStore()

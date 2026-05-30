@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation'
 import { useTheme } from '@/context/ThemeProvider'
-import { AuthStore } from '@/zustand/user/AuthStore'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
 
 const ThemeToggle: React.FC = () => {
   const router = useRouter()

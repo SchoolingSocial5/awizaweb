@@ -2,10 +2,10 @@
 import { appendForm } from '@/lib/helpers'
 import { validateInputs } from '@/lib/validation'
 import { useState } from 'react'
-import { MessageStore } from '@/zustand/notification/Message'
-import ProductStore from '@/zustand/Product'
+import { MessageStore } from '@/src/zustand/notification/Message'
+import ProductStore from '@/src/zustand/Product'
 import { X } from 'lucide-react'
-import PenStore from '@/zustand/Pen'
+import PenStore from '@/src/zustand/Pen'
 import { useEffect } from 'react'
 
 const ProductForm: React.FC = () => {

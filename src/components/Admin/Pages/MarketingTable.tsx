@@ -2,11 +2,11 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, usePathname } from 'next/navigation'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import { formatDateToDDMMYY } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
-import MarketingStore, { Marketing } from '@/zustand/Marketing'
+import MarketingStore, { Marketing } from '@/src/zustand/Marketing'
 import MarketingForm from '@/components/Admin/PopUps/MarketingForm'
 
 const MarketingTable: React.FC = () => {

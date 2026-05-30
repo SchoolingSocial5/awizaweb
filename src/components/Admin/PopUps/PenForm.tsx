@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import PenStore, { Pen, Column } from '@/zustand/Pen'
-import { MessageStore } from '@/zustand/notification/Message'
-import ProductStore from '@/zustand/Product'
+import PenStore, { Pen, Column } from '@/src/zustand/Pen'
+import { MessageStore } from '@/src/zustand/notification/Message'
+import ProductStore from '@/src/zustand/Product'
 
 const PenForm: React.FC = () => {
     const { penForm, setForm, createPen, updatePen, loading } = PenStore()

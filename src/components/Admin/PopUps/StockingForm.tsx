@@ -2,12 +2,12 @@
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { appendForm } from '@/lib/helpers'
-import { AlartStore, MessageStore } from '@/zustand/notification/Message'
+import { AlartStore, MessageStore } from '@/src/zustand/notification/Message'
 import { validateInputs } from '@/lib/validation'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import StockingStore from '@/zustand/Stocking'
-import ProductStore, { Product } from '@/zustand/Product'
-import { ProductEmpty } from '@/zustand/Transaction'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import StockingStore from '@/src/zustand/Stocking'
+import ProductStore, { Product } from '@/src/zustand/Product'
+import { ProductEmpty } from '@/src/zustand/Transaction'
 
 const StockingForm: React.FC = () => {
   const {

@@ -3,9 +3,9 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 import { useSwipeable } from 'react-swipeable'
-import { NavStore } from '@/zustand/notification/Navigation'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import CompanyStore from '@/zustand/app/Company'
+import { NavStore } from '@/src/zustand/notification/Navigation'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import CompanyStore from '@/src/zustand/app/Company'
 import ThemeToggle from './ThemeToggle'
 import {
   Gauge,

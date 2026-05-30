@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import { MessageStore } from '@/zustand/notification/Message'
+import { MessageStore } from '@/src/zustand/notification/Message'
 import LinkedPagination from '@/components/Admin/LinkedPagination'
 import {
   formatDateToDDMMYY,
@@ -10,8 +10,8 @@ import {
   formatTimeTo12Hour,
 } from '@/lib/helpers'
 import StatDuration from '@/components/Admin/StatDuration'
-import { AuthStore } from '@/zustand/user/AuthStore'
-import SalaryStore from '@/zustand/Salary'
+import { AuthStore } from '@/src/zustand/user/AuthStore'
+import SalaryStore from '@/src/zustand/Salary'
 
 const Salary: React.FC = () => {
   const [page_size] = useState(20)
