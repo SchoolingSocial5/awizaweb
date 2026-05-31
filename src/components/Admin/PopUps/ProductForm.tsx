@@ -102,12 +102,7 @@ const ProductForm: React.FC = () => {
         rules: { blank: false, maxLength: 1000 },
         field: 'Picture field',
       },
-      {
-        name: 'description',
-        value: productForm.description,
-        rules: { blank: false, maxSize: 5000 },
-        field: 'Description file',
-      },
+
       {
         name: 'isProducing',
         value: productForm.isProducing,
@@ -363,8 +358,13 @@ const ProductForm: React.FC = () => {
 
           {(productForm.type === 'Livestock' || productForm.isSelling) && (
             <div className="my-5 border-t border-[var(--border)] pt-5">
-              <div className="font-bold text-[var(--customRedColor)] mb-4 flex items-center uppercase text-sm tracking-wide">
-                <i className="bi bi-diagram-3-fill mr-2"></i> Livestock Pen Distribution
+              <div className="font-bold text-[var(--customRedColor)] mb-4 flex items-center justify-between uppercase text-sm tracking-wide">
+                <div><i className="bi bi-diagram-3-fill mr-2"></i> Livestock Pen Distribution</div>
+                {productForm.isProducing && (
+                  <div className="text-xs normal-case tracking-normal bg-[var(--customRedColor)]/10 px-3 py-1.5 rounded flex items-center">
+                    <i className="bi bi-box-seam mr-2"></i> Total In Stock: <span className="ml-1 text-sm font-black">{productForm.units || 0}</span>
+                  </div>
+                )}
               </div>
               
               <div className="flex flex-wrap items-end gap-3 mb-6">
@@ -447,20 +447,7 @@ const ProductForm: React.FC = () => {
             </div>
           )}
 
-          <div className="flex flex-col mt-4">
-            <label className="label" htmlFor="description">
-              Description
-            </label>
-            <input
-              className="form-input"
-              name="description"
-              id="description"
-              type="text"
-              value={productForm.description}
-              onChange={handleInputChange}
-              placeholder="Enter product description"
-            />
-          </div>
+
 
           <div className="flex flex-wrap items-center justify-end gap-3 mt-6">
             {loading ? (

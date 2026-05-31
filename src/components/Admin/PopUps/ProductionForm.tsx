@@ -34,6 +34,9 @@ const ProductionForm: React.FC = () => {
     const [productionValues, setProductionValues] = useState<Record<string, number>>({})
     const [currentColumns, setCurrentColumns] = useState<Column[]>([])
 
+    const isDirectorOrDeveloper = user?.staffPositions?.includes('Director') || user?.staffPositions?.includes('Developer') || user?.staffPositions === 'Director' || user?.staffPositions === 'Developer'
+    const selectedPenName = isDirectorOrDeveloper ? (operationForm.pen || user?.penHouse || "") : (user?.penHouse || "")
+
     useEffect(() => {
         getPens('/pens', setMessage)
         getProducts('/products?isProducing=true&page_size=100', setMessage)
@@ -41,17 +44,31 @@ const ProductionForm: React.FC = () => {
 
     useEffect(() => {
         // Find pen-specific columns when pen changes or form loads
-        const penName = operationForm.pen || user?.penHouse
+        const penName = isDirectorOrDeveloper ? (operationForm.pen || user?.penHouse || pens[0]?.name) : user?.penHouse
         if (penName && pens.length > 0) {
             const selectedPen = pens.find(p => p.name === penName)
             if (selectedPen) {
                 setCurrentColumns(selectedPen.columns || [])
                 // Auto-set pen and penId in form if not already set
-                if (!operationForm.pen) setForm('pen', selectedPen.name)
-                if (!operationForm.penId) setForm('penId', selectedPen._id)
+                if (operationForm.pen !== selectedPen.name) setForm('pen', selectedPen.name)
+                if (operationForm.penId !== selectedPen._id) setForm('penId', selectedPen._id)
             }
         }
-    }, [operationForm.pen, pens, user?.penHouse, setForm])
+    }, [operationForm.pen, pens, user?.penHouse, setForm, isDirectorOrDeveloper])
+
+    const handlePenChange = (penName: string) => {
+        setForm('pen', penName)
+        const pen = pens.find(p => p.name === penName)
+        if (pen) {
+            setForm('penId', pen._id)
+            setCurrentColumns(pen.columns || [])
+            setProductionValues({}) // clear production values when pen changes
+        } else {
+            setForm('penId', '')
+            setCurrentColumns([])
+            setProductionValues({})
+        }
+    }
 
     useEffect(() => {
         if (operationForm._id) {
@@ -115,7 +132,7 @@ const ProductionForm: React.FC = () => {
             ...operationForm,
             operation: 'Production',
             livestock: 'Bird',
-            pen: operationForm.pen || user?.penHouse || '',
+            pen: selectedPenName || '',
             penId: operationForm.penId || '',
             productionData,
             staffName: user?.fullName || 'Unknown',
@@ -241,12 +258,27 @@ const ProductionForm: React.FC = () => {
                         </select>
                     </div>
 
-                    {/* Pen Selection (Locked to User's Pen) */}
+                    {/* Pen Selection */}
                     <div className="flex flex-col">
                         <label className="label text-xs opacity-70">Pen / House</label>
-                        <div className="form-input bg-[var(--primary)] pointer-events-none opacity-80">
-                            {operationForm.pen || user?.penHouse || 'No Pen Assigned'}
-                        </div>
+                        {isDirectorOrDeveloper ? (
+                            <select
+                                value={selectedPenName}
+                                onChange={(e) => handlePenChange(e.target.value)}
+                                className="form-input py-1 px-2 text-xs font-semibold bg-white border border-gray-300 rounded outline-none focus:border-[var(--customColor)] cursor-pointer text-[var(--customRedColor)]"
+                            >
+                                <option value="">Select Pen</option>
+                                {pens.map((p) => (
+                                    <option key={p._id} value={p.name}>
+                                        {p.name}
+                                    </option>
+                                ))}
+                            </select>
+                        ) : (
+                            <div className="form-input bg-[var(--primary)] pointer-events-none opacity-80">
+                                {selectedPenName || 'No Pen Assigned'}
+                            </div>
+                        )}
                     </div>
 
                     {/* Staff Name (Locked) */}
