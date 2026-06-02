@@ -325,7 +325,7 @@ const DailyProductions: React.FC = () => {
       </div>
 
       <div className="card_body sharp">
-        <LinkedPagination url="/admin/operations/productions" count={count} page_size={page_size} />
+        <LinkedPagination url="/admin/operations/productions" count={count} page_size={count > 0 ? count : page_size} />
       </div>
 
       {showOperationForm && <ProductionForm />}

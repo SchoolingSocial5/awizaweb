@@ -202,9 +202,15 @@ interface ProductState {
   ) => Promise<void>
   updateProduct: (
     url: string,
-    updatedItem: FormData | Record<string, unknown>,
+    updatedItem: Record<string, unknown> | FormData,
     setMessage: (message: string, isError: boolean) => void,
     redirect?: () => void
+  ) => Promise<void>
+  transferLivestock: (
+    url: string,
+    data: Record<string, unknown>,
+    setMessage: (message: string, isError: boolean) => void,
+    onSuccess?: () => void
   ) => Promise<void>
   postProduct: (
     url: string,
@@ -815,6 +821,47 @@ const ProductStore = create<ProductState>((set) => ({
       if (redirect) redirect()
     } catch (error) {
       console.error("Update product failed:", error)
+    } finally {
+      set({ loading: false })
+    }
+  },
+
+  transferLivestock: async (url, data, setMessage, onSuccess) => {
+    try {
+      set({ loading: true })
+      const response = await apiRequest<any>(url, {
+        method: 'PATCH',
+        body: data,
+        setMessage,
+        setLoading: ProductStore.getState().setLoading,
+      })
+      if (response?.data?.updatedProducts) {
+        set((state) => {
+          const patchList = (list: Product[]) => {
+            let newList = [...list]
+            response.data.updatedProducts.forEach((up: Product) => {
+              const idx = newList.findIndex(p => p._id === up._id)
+              if (idx !== -1) {
+                newList[idx] = { ...newList[idx], ...up, isChecked: false, isActive: false }
+              } else {
+                newList.unshift({ ...up, isChecked: false, isActive: false })
+              }
+            })
+            return newList
+          }
+          return {
+            products: patchList(state.products),
+            buyingProducts: patchList(state.buyingProducts),
+            livestockProducts: patchList(state.livestockProducts),
+          }
+        })
+      } else if (response?.data) {
+        ProductStore.getState().setProcessedResults(response.data)
+        ProductStore.getState().syncCategorizedLists(response.data)
+      }
+      if (onSuccess) onSuccess()
+    } catch (error) {
+      console.error("Transfer livestock failed:", error)
     } finally {
       set({ loading: false })
     }

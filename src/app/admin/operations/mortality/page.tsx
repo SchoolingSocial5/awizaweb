@@ -250,7 +250,7 @@ const DailyMortality: React.FC = () => {
 
 
             <div className="card_body sharp">
-                <LinkedPagination url="/admin/operations/mortality" count={count} page_size={20} />
+                <LinkedPagination url="/admin/operations/mortality" count={count} page_size={count > 0 ? count : page_size} />
             </div>
 
             {showMortalityForm && <MortalityForm />}

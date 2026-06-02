@@ -292,7 +292,7 @@ const Consumptions: React.FC = () => {
         <LinkedPagination
           url="/admin/operations/consumptions"
           count={count}
-          page_size={20}
+          page_size={count > 0 ? count : page_size}
         />
       </div>
       {showConsumptionForm && <ConsumptionForm />}
