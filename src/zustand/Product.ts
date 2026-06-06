@@ -79,6 +79,8 @@ export interface Product {
   description: string
   picture: string | File
   payment?: string
+  amountType?: string
+  staffPhone?: string
   type: 'Feed' | 'Medicine' | 'Water' | 'Livestock' | 'General'
   isProducing: boolean
   isSelling: boolean
@@ -89,7 +91,7 @@ export interface Product {
   pId: string
   isChecked?: boolean
   isActive?: boolean
-  penDistributions: { penId: string; penName: string; units: number }[]
+  penDistributions: { penId: string; penName: string; units: number; dateOfBirth?: Date | string | null }[]
 }
 
 export const ProductEmpty = {
@@ -119,7 +121,9 @@ export const ProductEmpty = {
   seoTitle: '',
   isBuyable: false,
   pId: '',
-  payment: '',
+  payment: 'Bank Transfer',
+  amountType: '',
+  staffPhone: '',
   penDistributions: [],
 }
 

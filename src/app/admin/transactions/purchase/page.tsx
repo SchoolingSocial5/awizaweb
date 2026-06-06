@@ -154,9 +154,21 @@ const PurchaseTransactions: React.FC = () => {
                         className="cursor-pointer text-[var(--customRedColor)] hover:underline font-bold"
                         title={isPurchaseEditable ? "Click to Edit Purchase" : "Restricted: Director/Developer Only"}
                       >
-                        ₦{formatMoney(item.product.costPrice)} x{' '}
-                        {item.product.cartUnits} {item.product.purchaseUnit} of{' '}
-                        {item.product.name}
+                        {item.product ? (
+                          <>
+                            ₦{formatMoney(item.product.costPrice || item.product.price)} x{' '}
+                            {item.product.cartUnits} {item.product.purchaseUnit} of{' '}
+                            {item.product.name}
+                          </>
+                        ) : item.cartProducts && item.cartProducts.length > 0 ? (
+                          item.cartProducts.map((p: any, i: number) => (
+                            <div key={i}>
+                              ₦{formatMoney(p.costPrice || p.price)} x {p.cartUnits} {p.purchaseUnit} of {p.name}
+                            </div>
+                          ))
+                        ) : (
+                          <span>Product data missing</span>
+                        )}
                       </div>
                       <div className="text-sm">staff: {item.staffName}</div>
                     </div>

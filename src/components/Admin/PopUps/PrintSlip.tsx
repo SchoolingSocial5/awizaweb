@@ -46,7 +46,7 @@ const PrintSlip: React.FC<PrintSlipProps> = ({ transaction, onClose }) => {
         await navigator.share({
           files: [file],
           title: 'Transaction Receipt',
-          text: `Receipt from ${companyForm.name || 'Paragon Farms'} - Invoice #${transaction.invoiceNumber}`,
+          text: `Receipt from ${companyForm.name || 'Awiza Farms'} - Invoice #${transaction.invoiceNumber}`,
         });
       } else {
         const url = URL.createObjectURL(blob);
@@ -253,12 +253,11 @@ const PrintSlip: React.FC<PrintSlipProps> = ({ transaction, onClose }) => {
               }
             `}} />
             
-            {/* Header */}
             <div className="receipt-header">
-              <div className="business-name">{companyForm.name || 'PARAGON FARMS'}</div>
+              <div className="business-name">{companyForm.name || 'AWIZA FARMS'}</div>
               <div>{companyForm.headquaters || 'River State'}</div>
               <div>Tel: {companyForm.phone || '08098576453'}</div>
-              <div style={{fontSize: '11px'}}>Email: {companyForm.email || 'support@paragonfarmsltd.com'}</div>
+              <div style={{fontSize: '11px'}}>Email: {companyForm.email || 'support@awizafarms.com'}</div>
             </div>
 
             <div className="dashed-divider"></div>

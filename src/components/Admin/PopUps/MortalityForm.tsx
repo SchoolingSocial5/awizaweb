@@ -50,7 +50,7 @@ const MortalityForm: React.FC = () => {
           if (livestock) {
               const distribution = livestock.penDistributions?.find(d => d.penName === initialPenName || d.penId === pen?._id)
               const displayUnits = distribution ? distribution.units : 0
-              const age = calculateBirdAge(livestock.dateOfBirth)
+              const age = calculateBirdAge(distribution?.dateOfBirth || livestock.dateOfBirth)
 
               setForm('pen', initialPenName)
               setForm('productName', livestock.name)
@@ -74,7 +74,7 @@ const MortalityForm: React.FC = () => {
       if (livestock) {
         const distribution = livestock.penDistributions?.find(d => d.penName === penName || d.penId === pen?._id)
         const displayUnits = distribution ? distribution.units : 0
-        const age = calculateBirdAge(livestock.dateOfBirth)
+        const age = calculateBirdAge(distribution?.dateOfBirth || livestock.dateOfBirth)
 
         setForm('productName', livestock.name)
         setForm('productId', livestock._id)
@@ -105,7 +105,7 @@ const MortalityForm: React.FC = () => {
     const distribution = product.penDistributions?.find(d => d.penName === staffPenName || d.penId === pen?._id)
     const displayUnits = distribution ? distribution.units : 0
 
-    const age = calculateBirdAge(product.dateOfBirth)
+    const age = calculateBirdAge(distribution?.dateOfBirth || product.dateOfBirth)
 
     setForm('productName', product.name)
     setForm('productId', product._id)

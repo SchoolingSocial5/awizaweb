@@ -24,6 +24,7 @@ const ProductForm: React.FC = () => {
   const { pens, getPens } = PenStore()
   const [distPen, setDistPen] = useState({ _id: '', name: '' })
   const [distUnits, setDistUnits] = useState(0)
+  const [distDob, setDistDob] = useState<string>('')
   const [currentPage] = useState(1)
   const [page_size] = useState(20)
   const [sort] = useState('-createdAt')
@@ -75,8 +76,14 @@ const ProductForm: React.FC = () => {
       {
         name: 'unitPerPurchase',
         value: productForm.unitPerPurchase,
-        rules: { blank: false, maxLength: 100 },
-        field: 'Unit field',
+        rules: { blank: false },
+        field: 'Purchase Unit Multiple field',
+      },
+      {
+        name: 'dateOfBirth',
+        value: productForm.dateOfBirth,
+        rules: { blank: true, minLength: 0 },
+        field: 'Date of Birth',
       },
       {
         name: 'purchaseUnit',
@@ -126,12 +133,6 @@ const ProductForm: React.FC = () => {
         value: productForm.penDistributions,
         rules: { maxLength: 5000 },
         field: 'Distribution field',
-      },
-      {
-        name: 'dateOfBirth',
-        value: productForm.dateOfBirth,
-        rules: { blank: false },
-        field: 'Date of Birth field',
       },
       {
         name: 'units',
@@ -208,6 +209,27 @@ const ProductForm: React.FC = () => {
 
         <div className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="flex flex-col">
+              <label className="label">Amount Type / Brand</label>
+              <input
+                className="form-input"
+                name="amountType"
+                value={productForm.amountType}
+                onChange={handleInputChange}
+                placeholder="e.g. Kg, Litter, Big, Small"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <label className="label">Date of Birth (Livestock)</label>
+              <input
+                type="date"
+                className="form-input"
+                name="dateOfBirth"
+                value={productForm.dateOfBirth ? new Date(productForm.dateOfBirth).toISOString().split('T')[0] : ''}
+                onChange={handleInputChange}
+              />
+            </div>
             <div className="flex flex-col">
               <label className="label" htmlFor="">
                 Name
@@ -397,16 +419,27 @@ const ProductForm: React.FC = () => {
                   />
                 </div>
 
+                <div className="flex flex-col w-[150px]">
+                  <label className="label !text-[10px] uppercase opacity-50 font-bold">Date of Birth</label>
+                  <input 
+                    type="date" 
+                    className="form-input" 
+                    value={distDob} 
+                    onChange={(e) => setDistDob(e.target.value)}
+                  />
+                </div>
+
                 <button 
                   onClick={() => {
                     if(!distPen._id || !distUnits) return setMessage("Select pen and enter quantity", false);
                     const existing = productForm.penDistributions || [];
                     if(existing.find(e => e.penId === distPen._id)) return setMessage("Pen already in list", false);
 
-                    const updated = [...existing, { penId: distPen._id, penName: distPen.name, units: distUnits }];
+                    const updated = [...existing, { penId: distPen._id, penName: distPen.name, units: distUnits, dateOfBirth: distDob || undefined }];
                     setForm('penDistributions', updated);
                     setDistPen({ _id: '', name: '' });
                     setDistUnits(0);
+                    setDistDob('');
                   }}
                   className="custom_btn h-[45px] px-6 bg-[var(--customRedColor)] text-white hover:opacity-90"
                 >Add</button>
@@ -419,6 +452,7 @@ const ProductForm: React.FC = () => {
                       <tr className="bg-[var(--secondary)] border-b border-[var(--border)]">
                         <th className="p-3 text-left font-bold opacity-70">Pen House</th>
                         <th className="p-3 text-right font-bold opacity-70">Quantity</th>
+                        <th className="p-3 text-right font-bold opacity-70">Date of Birth</th>
                         <th className="p-3 text-center font-bold opacity-70">Action</th>
                       </tr>
                     </thead>
@@ -429,11 +463,17 @@ const ProductForm: React.FC = () => {
                           <td className="p-3 text-right font-bold">
                             {row.units}
                           </td>
+                          <td className="p-3 text-right">
+                            {row.dateOfBirth ? new Date(row.dateOfBirth).toISOString().split('T')[0] : 'N/A'}
+                          </td>
                           <td className="p-3 text-center">
                             <i 
                               onClick={() => {
                                 const updated = productForm.penDistributions.filter((_, i) => i !== idx);
                                 setForm('penDistributions', updated);
+                                setDistPen({ _id: row.penId, name: row.penName });
+                                setDistUnits(row.units);
+                                setDistDob(row.dateOfBirth ? new Date(row.dateOfBirth).toISOString().split('T')[0] : '');
                               }}
                               className="bi bi-trash text-red-500 cursor-pointer hover:scale-110 transition-transform"
                             ></i>

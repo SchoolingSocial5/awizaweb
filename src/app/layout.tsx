@@ -116,10 +116,10 @@ export default function RootLayout({
         />
         <meta
           property="og:image"
-          content="https://sbgeggfarm.com/images/og-image.jpg"
+          content="https://awizafarms.com/images/og-image.jpg"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://sbgeggfarm.com" />
+        <meta property="og:url" content="https://awizafarms.com" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -132,7 +132,7 @@ export default function RootLayout({
         />
         <meta
           property="twitter:image"
-          content="https://sbgeggfarm.com/images/og-image.jpg"
+          content="https://awizafarms.com/images/og-image.jpg"
         />
         <link rel="icon" href="/favicon.ico" />
 
