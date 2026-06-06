@@ -75,13 +75,13 @@ const BuyProductForm: React.FC = () => {
       {
         name: 'staffPhone',
         value: productForm.staffPhone,
-        rules: { blank: true, maxLength: 50 },
+        rules: { blank: false, maxLength: 50 },
         field: 'Staff Phone',
       },
       {
         name: 'dateOfBirth',
         value: productForm.dateOfBirth,
-        rules: { blank: true, minLength: 0 },
+        rules: { blank: false, minLength: 0 },
         field: 'Date of Birth',
       },
       {
@@ -504,16 +504,25 @@ const BuyProductForm: React.FC = () => {
                             {row.dateOfBirth ? new Date(row.dateOfBirth).toISOString().split('T')[0] : 'N/A'}
                           </td>
                           <td className="p-2 text-center">
-                            <i 
-                              onClick={() => {
-                                const updated = productForm.penDistributions.filter((_, i) => i !== idx);
-                                setForm('penDistributions', updated);
-                                setDistPen({ _id: row.penId, name: row.penName });
-                                setDistUnits(row.units);
-                                setDistDob(row.dateOfBirth ? new Date(row.dateOfBirth).toISOString().split('T')[0] : '');
-                              }}
-                              className="bi bi-trash text-red-500 cursor-pointer"
-                            ></i>
+                            <div className="flex items-center justify-center gap-4">
+                              <i 
+                                onClick={() => {
+                                  setDistPen({ _id: row.penId, name: row.penName });
+                                  setDistUnits(row.units);
+                                  setDistDob(row.dateOfBirth ? new Date(row.dateOfBirth).toISOString().split('T')[0] : '');
+                                  const updated = productForm.penDistributions.filter((_, i) => i !== idx);
+                                  setForm('penDistributions', updated);
+                                }}
+                                className="bi bi-pencil-square text-[var(--customColor)] cursor-pointer hover:scale-110 transition-transform"
+                              ></i>
+                              <i 
+                                onClick={() => {
+                                  const updated = productForm.penDistributions.filter((_, i) => i !== idx);
+                                  setForm('penDistributions', updated);
+                                }}
+                                className="bi bi-trash text-red-500 cursor-pointer hover:scale-110 transition-transform"
+                              ></i>
+                            </div>
                           </td>
                         </tr>
                       ))}

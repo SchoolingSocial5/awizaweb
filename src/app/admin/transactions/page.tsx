@@ -80,6 +80,8 @@ const Transactions: React.FC = () => {
           filters += '&cartProducts.name[in]=Fresh Eggs,Cracked Fresh Eggs'
         } else if (productFilter === 'Empty Bag') {
           filters += '&cartProducts.name[regex]=Empty Bag&cartProducts.name[options]=i'
+        } else if (productFilter === 'Manure') {
+          filters += '&cartProducts.name[regex]=Manure&cartProducts.name[options]=i'
         } else {
           filters += `&cartProducts.name=${productFilter}`
         }
@@ -261,6 +263,7 @@ const Transactions: React.FC = () => {
             <option value="Cracked Fresh Eggs">Cracked Fresh Eggs</option>
             <option value="Fresh & Cracked Eggs">Fresh & Cracked Eggs</option>
             <option value="Empty Bag">Empty Bag</option>
+            <option value="Manure">Manure</option>
           </select>
         </div>
 
@@ -460,10 +463,13 @@ const Transactions: React.FC = () => {
 
       <div className="card_body sharp mb-3 flex items-center justify-end">
         <div className="flex items-center">
-          <div className="text-[var(--success)] mr-3 font-bold">
+          <div className="text-[var(--text-secondary)] mr-3 font-bold" title="Total Items Sold">
+            {formatMoney(summary.totalQuantity || 0)} Items Sold
+          </div>
+          <div className="text-[var(--success)] mr-3 font-bold" title="Total Profit">
             ₦{formatMoney(summary.totalProfit)}
           </div>
-          <div className="text-[var(--customRedColor)] font-bold">
+          <div className="text-[var(--customRedColor)] font-bold" title="Total Loss">
             ₦{formatMoney(summary.totalLoss)}
           </div>
         </div>
@@ -473,7 +479,7 @@ const Transactions: React.FC = () => {
         <LinkedPagination
           url="/admin/transactions"
           count={count}
-          page_size={count > 0 ? count : 20}
+          page_size={count > 0 ? count : page_size}
         />
       </div>
 

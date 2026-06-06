@@ -242,7 +242,7 @@ const PurchaseTransactions: React.FC = () => {
         <LinkedPagination
           url="/admin/transactions/purchase"
           count={count}
-          page_size={count > 0 ? count : 20}
+          page_size={count > 0 ? count : page_size}
         />
       </div>
 
