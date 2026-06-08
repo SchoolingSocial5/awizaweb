@@ -233,19 +233,19 @@ const TransactionStore = create<TransactionState>((set) => ({
   },
 
   setProcessedResults: ({ count, results }: FetchResponse) => {
-    if (results.length > 0) {
-      const updatedResults = results.map((item: Transaction) => ({
-        ...item,
-        isChecked: false,
-        isActive: false,
-      }))
+    const updatedResults = results.map((item: Transaction) => ({
+      ...item,
+      isChecked: false,
+      isActive: false,
+    }))
 
-      set({
-        count,
-        transactions: updatedResults,
-        trx: results,
-      })
-    }
+    set({
+      count,
+      transactions: updatedResults,
+      trx: results,
+      selectedTransactions: [],
+      isAllChecked: false,
+    })
   },
 
   getTransactionBarchart: async (url: string) => {
@@ -393,6 +393,7 @@ const TransactionStore = create<TransactionState>((set) => ({
         method: 'PATCH',
         body,
         setMessage,
+        setLoading: TransactionStore.getState().setLoading,
       })
       const data = response?.data
       if (data) {
