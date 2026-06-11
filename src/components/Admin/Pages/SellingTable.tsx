@@ -58,8 +58,11 @@ const SellingTable: React.FC = () => {
     }
 
     const total = cartProducts.reduce((sum, item) => {
+      // Use adjustedPrice if it has been explicitly set (> 0), regardless of
+      // whether it is above or below costPrice — this ensures cracked-egg
+      // discounted prices entered by the user are always honoured.
       const priceToUse =
-        item.adjustedPrice && item.adjustedPrice > item.costPrice
+        item.adjustedPrice && item.adjustedPrice > 0
           ? item.adjustedPrice
           : item.price
 
