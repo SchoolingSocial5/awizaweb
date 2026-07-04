@@ -43,10 +43,12 @@ const Consumptions: React.FC = () => {
 
   useEffect(() => {
     // if (consumptions.length === 0) {
-    const params = `/consumptions${fromDate && toDate
-      ? `?dateFrom=${fromDate.toISOString()}&dateTo=${toDate.toISOString()}&`
-      : '?'
-      }page_size=${page_size}&page=${page ? page : 1}&ordering=${sort}${activeCategory ? `&type=${activeCategory}` : ''}${activePen ? `&pen=${activePen}` : ''}`
+    const dateParams = []
+    if (fromDate) dateParams.push(`dateFrom=${fromDate.toISOString()}`)
+    if (toDate) dateParams.push(`dateTo=${toDate.toISOString()}`)
+    const dateQueryString = dateParams.length > 0 ? `?${dateParams.join('&')}&` : '?'
+    
+    const params = `/consumptions${dateQueryString}page_size=${page_size}&page=${page ? page : 1}&ordering=${sort}${activeCategory ? `&type=${activeCategory}` : ''}${activePen ? `&pen=${activePen}` : ''}`
     getConsumptions(`${params}`, setMessage)
     // }
   }, [page, pathname, toDate, fromDate, activeCategory, activePen, sort])
@@ -173,16 +175,18 @@ const Consumptions: React.FC = () => {
         </div>
       </div>
  
-      {activeCategory && summary.totalQuantity > 0 && (
+      {(activeCategory || activePen) && consumptions.length > 0 && (
         <div className="card_body sharp mb-3 bg-[var(--primary)] border-l-4 border-[var(--customColor)] py-3 mx-4">
           <div className="flex items-center justify-between">
             <div className="flex flex-col">
-              <span className="text-[10px] font-bold opacity-60 uppercase tracking-wider">Filtered Total ({activeCategory})</span>
+              <span className="text-[10px] font-bold opacity-60 uppercase tracking-wider">
+                Filtered Total{activeCategory ? ` (${activeCategory})` : ''}{activePen ? ` — ${activePen}` : ''}
+              </span>
               <span className="text-xs opacity-70">Sum of all consumption records in this view</span>
             </div>
             <div className="text-right">
               <span className="text-2xl font-black text-[var(--customColor)]">
-                {summary.totalQuantity}{' '}
+                {consumptions.reduce((sum, item) => sum + (Number(item.consumption) || 0), 0)}{' '}
                 <span className="text-xs font-bold opacity-60 uppercase">{consumptions[0]?.consumptionUnit || 'Units'}</span>
               </span>
             </div>
